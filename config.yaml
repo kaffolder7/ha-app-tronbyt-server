@@ -1,6 +1,6 @@
 ---
 name: "Tronbyt Server"
-version: "0.1.17"
+version: "0.1.18"
 slug: "tronbyt_server"
 description: "Manage your apps on your Tronbyt (flashed Tidbyt) completely locally without relying on Tidbyt's backend servers."
 arch:
