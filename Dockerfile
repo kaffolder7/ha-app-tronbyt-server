@@ -7,7 +7,8 @@ FROM alpine:3.21
 
 # Install runtime dependencies
 #   `jq` used for parsing Home Assistant options.json
-RUN apk add --no-cache jq ca-certificates tzdata dos2unix
+#   `git` used to resolve refs for an optional custom server fork (build-from-source flow in run.sh)
+RUN apk add --no-cache jq ca-certificates tzdata dos2unix git
 
 # Copy everything from /app in the tronbyt image (binary + static assets)
 COPY --from=tronbyt /app/ /app/

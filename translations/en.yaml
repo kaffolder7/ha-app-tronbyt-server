@@ -20,5 +20,11 @@ configuration:
     name: System Apps Repository
     # description: Git URL to your system apps repository.
     description: Specify Git repository URL for system apps.
+  custom_server_repo:
+    name: Custom Server Fork Repository
+    description: Optional Git URL for a Tronbyt Server fork. When set, the server is built from source on startup instead of using the bundled upstream build.
+  custom_server_ref:
+    name: Custom Server Fork Ref
+    description: Branch, tag, or commit SHA to check out from the custom server repository. Defaults to the repository's default branch when empty.
 network:
   8000/tcp: Tronbyt Web UI/LAN access (default host port: 8000)

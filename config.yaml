@@ -1,6 +1,6 @@
 ---
 name: "Tronbyt Server"
-version: "0.1.20"
+version: "0.1.21"
 slug: "tronbyt_server"
 description: "Manage your apps on your Tronbyt (flashed Tidbyt) completely locally without relying on Tidbyt's backend servers."
 arch:
@@ -21,13 +21,16 @@ options:
   single_user_auto_login: false
   github_token: ""
   system_apps_repo: ""
+  custom_server_repo: ""
+  custom_server_ref: ""
 schema:
   production: bool
   enable_user_registration: bool
   single_user_auto_login: bool
   github_token: "password?"
   system_apps_repo: "str?"
-image: "ghcr.io/kaffolder7/{arch}-app-tronbyt-server"
+  custom_server_repo: "str?"
+  custom_server_ref: "str?"
 panel_icon: "mdi:server-network"
 
 # Let Docker init handle zombie reaping (Tronbyt’s own compose uses init: true)

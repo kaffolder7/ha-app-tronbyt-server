@@ -35,10 +35,15 @@ Example: `http://192.168.1.100:8000` (if host port is set to `8000`)
 | `single_user_auto_login` | `false` | Automatically signs in a single-user setup. |
 | `github_token` | `""` | GitHub token used when accessing private app repositories. |
 | `system_apps_repo` | `""` | Optional Git URL for a custom system apps repository. |
+| `custom_server_repo` | `""` | Optional Git URL for a custom Tronbyt Server fork. When set, the binary is built from source on startup instead of using the bundled upstream build. |
+| `custom_server_ref` | `""` | Branch, tag, or commit SHA to check out from `custom_server_repo`. Defaults to the repository's default branch when empty. |
 
 Notes:
 - Keep `enable_user_registration` disabled unless you specifically need it.
 - `github_token` is optional and only needed for private repositories.
+- `custom_server_repo` is intended for forks of [`tronbyt/server`](https://github.com/tronbyt/server). The fork must keep the same project layout (Go module with a `./cmd/server` entrypoint and CGo + libwebp dependencies).
+- The first build with a new repo or ref can take several minutes — the addon installs build dependencies and compiles Go from source. Builds are cached under `/data/tronbyt-build/cache/<commit>/`; restarts on the same commit reuse the cached binary. The three most recent builds are retained.
+- Clear `custom_server_repo` to revert to the bundled upstream binary on the next restart.
 
 ## Network
 

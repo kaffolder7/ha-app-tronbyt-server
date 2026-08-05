@@ -20,5 +20,11 @@ configuration:
     name: System-Apps-Repository
     # description: Git-URL zu Ihrem System-App-Repository.
     description: Geben Sie die Git-Repository-URL für Systemanwendungen an.
+  custom_server_repo:
+    name: Eigenes Server-Fork-Repository
+    description: Optionale Git-URL für einen Fork des Tronbyt-Servers. Wenn gesetzt, wird der Server beim Start aus dem Quellcode kompiliert, anstatt den mitgelieferten Upstream-Build zu verwenden.
+  custom_server_ref:
+    name: Eigene Server-Fork-Referenz
+    description: Branch, Tag oder Commit-SHA, der aus dem eigenen Server-Repository ausgecheckt wird. Wenn leer, wird der Standard-Branch des Repositorys verwendet.
 network:
   8000/tcp: Tronbyt Web-Benutzeroberfläche/LAN-Zugriff (Standard-Host-Port: 8000)

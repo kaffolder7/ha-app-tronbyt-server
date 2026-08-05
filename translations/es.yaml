@@ -20,5 +20,11 @@ configuration:
     name: Repositorio de aplicaciones del sistema
     # description: URL de Git del repositorio de las aplicaciones de su sistema.
     description: Especifique la URL del repositorio de Git para las aplicaciones del sistema.
+  custom_server_repo:
+    name: Repositorio del fork del servidor personalizado
+    description: URL de Git opcional para un fork del servidor Tronbyt. Cuando se establece, el servidor se compila desde el código fuente al arrancar en lugar de usar la versión incluida.
+  custom_server_ref:
+    name: Referencia del fork del servidor personalizado
+    description: Rama, etiqueta o SHA del commit a usar del repositorio del servidor personalizado. Si se deja vacío, se usa la rama predeterminada del repositorio.
 network:
   8000/tcp: UI web/acceso LAN de Tronbyt (puerto de host predeterminado: 8000)
