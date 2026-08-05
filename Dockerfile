@@ -1,5 +1,5 @@
 # Stage 1: Extract the tronbyt-server binary from the official image
-ARG BUILD_FROM=ghcr.io/tronbyt/server:2.2.9
+ARG BUILD_FROM=ghcr.io/tronbyt/server:2.3.2
 FROM $BUILD_FROM AS tronbyt
 
 # Stage 2: Build the actual app using Alpine (has shell, apk, etc.)
